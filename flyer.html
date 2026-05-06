@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Backnine Trades — Services for Property Managers</title>
+<style>
+  @page { size: Letter; margin: 0.45in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.35;
+  }
+  @media (prefers-color-scheme: dark) {
+    html, body { background: #ffffff !important; color: #1a1a1a !important; }
+  }
+  .page { max-width: 7.6in; margin: 0 auto; }
+  header {
+    border-bottom: 3px solid #0d3b66;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .brand-lockup { display: flex; align-items: center; gap: 10px; }
+  .brand-mark {
+    width: 52px; height: 52px;
+    background: #0d3b66;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+    flex-shrink: 0;
+  }
+  .brand-mark svg { width: 38px; height: 38px; display: block; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1; }
+  .brand-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26pt;
+    font-weight: 700;
+    color: #0d3b66;
+    letter-spacing: -0.8px;
+  }
+  .brand-name .nine { color: #f4a261; font-style: italic; }
+  .brand-sub {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0d3b66;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    border-top: 1.5px solid #f4a261;
+    padding-top: 3px;
+  }
+  .tag { font-size: 9.5pt; color: #555; font-style: italic; }
+  h1 {
+    font-size: 14pt;
+    color: #0d3b66;
+    margin: 12px 0 4px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 10.5pt;
+    margin: 0 0 4px;
+    color: #0d3b66;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .lede {
+    font-size: 10.5pt;
+    margin: 0 0 14px;
+    padding-left: 18px;
+  }
+  .lede li { margin-bottom: 4px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    margin-bottom: 12px;
+  }
+  .card {
+    border: 1px solid #d4d9e0;
+    border-left: 4px solid #f4a261;
+    padding: 8px 10px;
+    border-radius: 3px;
+    background: #fafbfc;
+  }
+  .card.blue { border-left-color: #0d3b66; }
+  .card.red { border-left-color: #c1121f; }
+  .card.green { border-left-color: #2a9d8f; }
+  .card ul { margin: 4px 0 0 16px; padding: 0; }
+  .card li { margin-bottom: 2px; }
+  .pricing {
+    background: #0d3b66;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin: 8px 0 12px;
+  }
+  .pricing h2 { color: #f4a261; margin-bottom: 6px; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px 12px;
+    font-size: 9.5pt;
+  }
+  .pricing-grid .label { color: #c8d3e0; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  .pricing-grid .val { font-weight: 600; }
+  .team {
+    margin-bottom: 12px;
+    border-top: 2px solid #f4a261;
+    padding-top: 8px;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .team-grid > div { text-align: center; }
+  .team-grid .num { font-size: 14pt; font-weight: 800; color: #0d3b66; line-height: 1.1; }
+  .team-grid .lbl { font-size: 8.5pt; color: #555; }
+  .skills { font-size: 9pt; color: #333; line-height: 1.45; }
+  footer {
+    border-top: 2px solid #0d3b66;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9.5pt;
+  }
+  .cta {
+    background: #f4a261;
+    color: #0d3b66;
+    padding: 6px 14px;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+  .fine { font-size: 8pt; color: #777; margin-top: 6px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div>
+    <div class="brand-lockup">
+      <div class="brand-mark">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect x="31.2" y="2" width="1.6" height="14" fill="#ffffff"/>
+          <path d="M 32.8 3 L 42 6 L 32.8 9 Z" fill="#ffffff"/>
+          <rect x="30" y="14" width="4" height="2" fill="#f4a261"/>
+          <path d="M 32 14 L 18 24 L 46 24 Z" fill="#f4a261"/>
+          <path d="M 32 14 L 32 24 L 18 24 Z" fill="#0d3b66" opacity="0.18"/>
+          <rect x="17" y="24" width="30" height="1.5" fill="#f4a261"/>
+          <rect x="19" y="25.5" width="26" height="32" fill="#f4a261"/>
+          <rect x="25" y="28" width="14" height="20" fill="#0d3b66" opacity="0.15"/>
+          <rect x="22" y="29" width="2.5" height="5" fill="#0d3b66"/>
+          <rect x="26.5" y="29" width="3" height="5" fill="#0d3b66"/>
+          <rect x="30.5" y="29" width="3" height="5" fill="#0d3b66"/>
+          <rect x="34.5" y="29" width="3" height="5" fill="#0d3b66"/>
+          <rect x="39.5" y="29" width="2.5" height="5" fill="#0d3b66"/>
+          <rect x="22" y="38" width="2.5" height="5" fill="#0d3b66"/>
+          <rect x="26.5" y="38" width="3" height="5" fill="#0d3b66"/>
+          <rect x="30.5" y="38" width="3" height="5" fill="#0d3b66"/>
+          <rect x="34.5" y="38" width="3" height="5" fill="#0d3b66"/>
+          <rect x="39.5" y="38" width="2.5" height="5" fill="#0d3b66"/>
+          <path d="M 29 50 L 29 57 L 35 57 L 35 50 Q 32 47 29 50 Z" fill="#0d3b66"/>
+          <rect x="27" y="57" width="10" height="1.5" fill="#f4a261"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Back<span class="nine">9</span></div>
+        <div class="brand-sub">Trades</div>
+      </div>
+    </div>
+    <div class="tag">Repair &amp; maintenance built for SF multifamily operators</div>
+  </div>
+  <div style="text-align:right; font-size:9pt; color:#555;">
+    Backed by veteran SF multifamily operators<br>
+    San Francisco Bay Area
+  </div>
+</header>
+
+<h1>Outsource your R&amp;M. Keep your residents happy.</h1>
+<ul class="lede">
+  <li><strong>Owner-operator DNA.</strong> Founded by SF multifamily veterans &mdash; we treat every work order like it&rsquo;s our own building.</li>
+  <li><strong>Independent &amp; conflict-free.</strong> No institutional ownership ties. Your properties get the same priority as ours.</li>
+  <li><strong>Full-service R&amp;M.</strong> Work orders, after-hours, and unit turns &mdash; one vendor, all trades.</li>
+</ul>
+
+<div class="grid">
+
+  <div class="card blue">
+    <h2>General Maintenance &amp; Work Orders</h2>
+    Day-to-day repairs across plumbing, electrical, appliances, carpentry, painting, locks, access systems, common areas, pest, and fire/safety.
+    <ul>
+      <li>Single point of contact &mdash; one vendor, all trades</li>
+      <li>Yardi / AppFolio / Buildium-friendly intake</li>
+      <li>Photo documentation &amp; closeout on every WO</li>
+      <li>Licensed CA contractors for permitted scopes</li>
+    </ul>
+  </div>
+
+  <div class="card red">
+    <h2>24/7 After-Hours &amp; Emergency</h2>
+    Live dispatch nights, weekends, and holidays. Floods, lockouts, no-heat, no-power, security &mdash; covered.
+    <ul>
+      <li>Emergency on-call retainer available</li>
+      <li>Target response: &lt;60 min for life-safety</li>
+      <li>After-hours lockout dispatch</li>
+      <li>Direct line to a human, not a voicemail</li>
+    </ul>
+  </div>
+
+  <div class="card green">
+    <h2>Unit Turnover Program</h2>
+    Move-out to make-ready in days, not weeks. Flat-rate or scoped pricing &mdash; no surprises.
+    <ul>
+      <li>Trash-out, paint, clean, punch, key</li>
+      <li>Standardized turn checklist &amp; QC walk</li>
+      <li>Photo report delivered before relisting</li>
+      <li>Volume turn pricing for portfolios</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-left-color:#6c757d;">
+    <h2>Recurring &amp; Packaged Services</h2>
+    Predictable monthly billing for the work that has to happen anyway.
+    <ul>
+      <li>Janitorial &amp; common area cleaning</li>
+      <li>Preventive pest control</li>
+      <li>Landscaping &amp; exterior upkeep</li>
+      <li>Planned-maintenance &amp; PM membership programs</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="pricing">
+  <h2>Pricing &mdash; Market-Aligned, Volume-Discounted</h2>
+  <div class="pricing-grid">
+    <div>
+      <div class="label">General Maintenance</div>
+      <div class="val">Mid-market hourly</div>
+    </div>
+    <div>
+      <div class="label">Licensed Trades</div>
+      <div class="val">Competitive vs. local providers</div>
+    </div>
+    <div>
+      <div class="label">Emergency / After-Hours</div>
+      <div class="val">Premium with min charge</div>
+    </div>
+    <div>
+      <div class="label">Unit Turns</div>
+      <div class="val">Flat-rate per unit</div>
+    </div>
+  </div>
+  <div style="margin-top:8px; font-size:9.5pt;">
+    <strong style="color:#f4a261;">Volume discounts</strong> scale with portfolio size and committed work-order volume.
+    Multi-property portfolios and recurring-service contracts qualify for tiered pricing &mdash;
+    typical savings <strong>5&ndash;15%</strong> off published rates, with additional bundling discounts when packaged services are included.
+    A detailed quote sheet is provided on request.
+  </div>
+</div>
+
+<div class="team">
+  <h2 style="color:#0d3b66; margin:0 0 6px; font-size:11pt; text-transform:uppercase; letter-spacing:0.5px;">The Team</h2>
+  <div class="team-grid">
+    <div>
+      <div class="num">18+</div>
+      <div class="lbl">field technicians &amp; supervisors</div>
+    </div>
+    <div>
+      <div class="num">14</div>
+      <div class="lbl">trade categories in-house</div>
+    </div>
+    <div>
+      <div class="num">Bilingual</div>
+      <div class="lbl">English / Spanish dispatch &amp; field</div>
+    </div>
+    <div>
+      <div class="num">24/7</div>
+      <div class="lbl">live emergency dispatch</div>
+    </div>
+  </div>
+  <div class="skills">
+    <strong>In-house skill coverage:</strong>
+    Plumbing &middot; Electrical &middot; HVAC &middot; Appliance Repair &middot; Carpentry &middot; Painting &middot; Flooring &middot;
+    Locks &amp; Access Systems &middot; Fire &amp; Safety &middot; Pest Control &middot; Janitorial &middot; Low-Voltage / IT &middot;
+    Common-Area Repairs &middot; Unit Turn / Make-Ready
+  </div>
+  <div class="skills" style="margin-top:4px;">
+    <strong>Risk &amp; compliance:</strong>
+    Licensed CA Contractor &middot; W/C &amp; GL insurance on file &middot; OSHA-trained crews &middot;
+    background-screened &middot; uniformed &amp; badged techs &middot; photo-documented work orders &middot;
+    COI issued to your entity on request
+  </div>
+</div>
+
+<footer>
+  <div>
+    <strong>Let&rsquo;s talk.</strong> Send us a sample month of work orders and we&rsquo;ll come back with a custom quote sheet within 5 business days.
+    <div class="fine">Backnine Trades &middot; Licensed CA Contractor &middot; Fully insured &middot; W/C &amp; GL on file</div>
+  </div>
+  <div class="cta">info@backninetrades.com</div>
+</footer>
+
+</div>
+</body>
+</html>

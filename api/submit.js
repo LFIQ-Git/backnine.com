@@ -4,8 +4,8 @@
 //
 // Required env vars (set in Vercel → Project → Settings → Environment Variables):
 //   RESEND_API_KEY  — Resend API key (re_...)
-//   LEAD_INBOX      — where submissions are delivered (default info@backninetrades.com)
-//   LEAD_FROM       — verified sender, e.g. "Back9 Trades <portal@backninetrades.com>"
+//   LEAD_INBOX      — where submissions are delivered (default info@back9trades.com)
+//   LEAD_FROM       — verified sender, e.g. "Back9 Trades <portal@back9trades.com>"
 //                     Until the domain is verified in Resend, use "onboarding@resend.dev"
 //                     (Resend only delivers that sender to the account owner's email).
 
@@ -74,11 +74,11 @@ module.exports = async function handler(req, res) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_INBOX || 'info@backninetrades.com';
+  const to = process.env.LEAD_INBOX || 'info@back9trades.com';
   const from = process.env.LEAD_FROM || 'Back9 Trades Portal <onboarding@resend.dev>';
 
   if (!apiKey) {
-    return res.status(500).json({ error: 'Email is not configured yet. Please email info@backninetrades.com.' });
+    return res.status(500).json({ error: 'Email is not configured yet. Please email info@back9trades.com.' });
   }
 
   // Vercel parses JSON bodies automatically; fall back to manual parse just in case.

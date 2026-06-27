@@ -65,14 +65,14 @@ The work-order and proposal forms POST JSON to `/api/submit`, which sends each s
 ### One-time setup (required for forms to send)
 
 1. **Create a Resend account** at https://resend.com and generate an API key.
-2. **Verify the domain** `backninetrades.com` in Resend → Domains. Resend gives you DKIM/SPF DNS records to add at the registrar (or in Vercel DNS if the domain is managed there). Until the domain is verified, Resend will only deliver mail sent from `onboarding@resend.dev`, and only to the Resend account owner's address — fine for a first test, not for production.
+2. **Verify the domain** `back9trades.com` in Resend → Domains (this is the email domain; the marketing site is served from backninetrades.com — the two can differ). Resend gives you DKIM/SPF DNS records to add at the registrar (or in Vercel DNS if the domain is managed there). Until the domain is verified, Resend will only deliver mail sent from `onboarding@resend.dev`, and only to the Resend account owner's address — fine for a first test, not for production.
 3. **Set environment variables** in Vercel → Project → Settings → Environment Variables (Production + Preview):
    - `RESEND_API_KEY` — the Resend API key (`re_...`)
-   - `LEAD_INBOX` — where submissions land (default `info@backninetrades.com`)
-   - `LEAD_FROM` — verified sender, e.g. `Back9 Trades Portal <portal@backninetrades.com>` (use `Back9 Trades Portal <onboarding@resend.dev>` for the pre-verification test)
+   - `LEAD_INBOX` — where submissions land (default `info@back9trades.com`)
+   - `LEAD_FROM` — verified sender, e.g. `Back9 Trades Portal <portal@back9trades.com>` (use `Back9 Trades Portal <onboarding@resend.dev>` for the pre-verification test)
 4. **Redeploy** so the function picks up the env vars.
 
-Each email's `reply_to` is set to the submitter, so replying from the inbox goes straight back to the prospect. A hidden honeypot field blocks basic spam bots. If `RESEND_API_KEY` is missing, the form shows an error telling the visitor to email `info@backninetrades.com` directly — it never silently drops a lead.
+Each email's `reply_to` is set to the submitter, so replying from the inbox goes straight back to the prospect. A hidden honeypot field blocks basic spam bots. If `RESEND_API_KEY` is missing, the form shows an error telling the visitor to email `info@back9trades.com` directly — it never silently drops a lead.
 
 ## Print to PDF
 

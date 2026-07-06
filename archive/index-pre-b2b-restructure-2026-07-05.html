@@ -142,6 +142,18 @@
     padding: 88px 0 72px;
   }
   .hero .kicker { color: var(--orange); }
+
+  /* Imagery */
+  .media-split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+  .media-split .section-intro { margin-bottom: 0; }
+  .media-frame { border-radius: 8px; overflow: hidden; box-shadow: 0 14px 34px rgba(13,59,102,0.20); }
+  .media-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .work-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 0 36px; }
+  .work-card { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: 0 8px 22px rgba(13,59,102,0.14); }
+  .work-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+  .work-card:hover img { transform: scale(1.05); }
+  .work-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%); }
+  .work-card span { position: absolute; left: 13px; bottom: 11px; z-index: 1; color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
   .hero h1 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 46px;
@@ -178,83 +190,6 @@
     line-height: 1.1;
   }
   .stat .lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
-
-  /* Problem slider */
-  .aud-switch { display: inline-flex; border: 1.5px solid var(--navy); border-radius: 6px; overflow: hidden; margin: 4px 0 30px; }
-  .aud-switch button {
-    background: #fff;
-    color: var(--navy);
-    border: none;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 11px 22px;
-    cursor: pointer;
-  }
-  .aud-switch button.active { background: var(--navy); color: #fff; }
-  .slider-window { overflow: hidden; }
-  .slider-track { display: flex; width: 200%; transition: transform .45s ease; }
-  .slider-pane { width: 50%; flex-shrink: 0; }
-  .slider-pane .inner { padding-right: 2px; }
-  .slider-track.show-owner { transform: translateX(-50%); }
-
-  /* Comparison table */
-  .compare {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    font-size: 14.5px;
-  }
-  .compare th, .compare td {
-    padding: 14px 18px;
-    text-align: left;
-    border-bottom: 1px solid var(--line);
-    vertical-align: top;
-  }
-  .compare th { font-size: 15px; }
-  .compare th.bad { background: var(--bg-soft); color: var(--muted); width: 40%; }
-  .compare th.good { background: var(--navy); color: #fff; width: 40%; }
-  .compare th.dim { background: #fff; width: 20%; color: var(--navy); }
-  .compare td.dim { font-weight: 700; color: var(--navy); font-size: 13.5px; }
-  .compare td.bad { color: var(--muted); background: var(--bg-soft); }
-  .compare td.good { color: var(--ink); }
-  .compare td.good::before { content: "✓ "; color: #2a9d8f; font-weight: 700; }
-  .compare-wrap { overflow-x: auto; }
-
-  /* Segmentation */
-  .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .seg-card {
-    background: var(--navy);
-    color: #fff;
-    border-radius: 8px;
-    padding: 34px 30px 30px;
-  }
-  .seg-card.light { background: var(--navy-dark); }
-  .seg-card h3 {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    margin: 0 0 12px;
-    color: #fff;
-  }
-  .seg-card h3 span { color: var(--orange); }
-  .seg-card p { color: #c8d3e0; font-size: 14.5px; margin: 0 0 20px; }
-  .seg-card ul { color: #c8d3e0; font-size: 14px; margin: 0 0 22px; padding-left: 18px; }
-  .seg-card li { margin-bottom: 6px; }
-
-  /* Imagery */
-  .media-split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
-  .media-split .section-intro { margin-bottom: 0; }
-  .media-frame { border-radius: 8px; overflow: hidden; box-shadow: 0 14px 34px rgba(13,59,102,0.20); }
-  .media-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .work-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 0 36px; }
-  .work-card { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4 / 3; box-shadow: 0 8px 22px rgba(13,59,102,0.14); }
-  .work-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
-  .work-card:hover img { transform: scale(1.05); }
-  .work-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%); }
-  .work-card span { position: absolute; left: 13px; bottom: 11px; z-index: 1; color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 
   /* Cards */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -404,7 +339,7 @@
   .fine { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 18px; font-size: 12.5px; color: #8fa3b8; }
 
   @media (max-width: 860px) {
-    .grid-2, .grid-3, .steps, .badges, .stats-grid, .portal-grid, .footer-grid, .form-grid, .media-split, .seg-grid { grid-template-columns: 1fr; }
+    .grid-2, .grid-3, .steps, .badges, .stats-grid, .portal-grid, .footer-grid, .form-grid, .media-split { grid-template-columns: 1fr; }
     .work-strip { grid-template-columns: 1fr 1fr; }
     .hero h1 { font-size: 33px; }
     nav.main { display: none; }
@@ -432,13 +367,13 @@
       </div>
     </a>
     <nav class="main">
-      <a href="#why">Why Back9</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#compliance">Compliance</a>
+      <a href="#team">Team</a>
       <a href="#process">How We Work</a>
+      <a href="#compliance">Compliance</a>
       <a href="#faq">FAQ</a>
-      <a href="#portal" class="btn outline-navy" style="padding:9px 16px;" onclick="showTab('workorder')">Client Portal</a>
-      <a href="#portal" class="btn" onclick="showTab('proposal')">Request a Proposal</a>
+      <a href="#portal" class="btn">Client Portal</a>
     </nav>
   </div>
 </header>
@@ -456,8 +391,8 @@
       services with our own crews.
     </p>
     <div class="hero-ctas">
-      <a class="btn" href="#portal" onclick="showTab('proposal')">Request a Proposal</a>
-      <a class="btn ghost" href="#portal" onclick="showTab('workorder')">Existing clients: Submit a Work Order</a>
+      <a class="btn" href="#portal">Submit a Work Order</a>
+      <a class="btn ghost" href="#portal" onclick="showTab('proposal')">Request a Proposal</a>
     </div>
   </div>
 </section>
@@ -471,157 +406,25 @@
   </div>
 </div>
 
-<section class="section alt" id="why">
+<section class="section alt" id="about">
   <div class="wrap">
-    <div class="kicker">The Problem</div>
-    <div class="aud-switch" role="tablist">
-      <button id="aud-pm" class="active" onclick="showAud('pm')" type="button">Property Managers</button>
-      <button id="aud-owner" onclick="showAud('owner')" type="button">Property Owners</button>
-    </div>
-    <div class="slider-window">
-      <div class="slider-track" id="aud-track">
-
-        <div class="slider-pane">
-          <div class="inner">
-            <h2>Vendor sprawl costs your managers time and money</h2>
-            <p class="section-intro">
-              Property managers without an in-house maintenance team run every work order through
-              a patchwork of single-trade vendors. Every added vendor means another COI to chase,
-              another invoice format, and another dispatcher who may or may not pick up at 2am.
-              Nobody owns the job end to end, so documentation is thin, callbacks go unmanaged,
-              and your managers spend their day chasing vendors instead of managing properties.
-            </p>
-            <div class="compare-wrap">
-              <table class="compare">
-                <tr>
-                  <th class="dim"></th>
-                  <th class="bad">A patchwork of vendors</th>
-                  <th class="good">With Back9</th>
-                </tr>
-                <tr>
-                  <td class="dim">Point of contact</td>
-                  <td class="bad">A different dispatcher for every trade</td>
-                  <td class="good">One point of contact for all 14 trades</td>
-                </tr>
-                <tr>
-                  <td class="dim">Vendor file</td>
-                  <td class="bad">A COI and W-9 for every vendor</td>
-                  <td class="good">One vendor file, COI issued to your entity</td>
-                </tr>
-                <tr>
-                  <td class="dim">After hours</td>
-                  <td class="bad">Answering services and voicemail</td>
-                  <td class="good">Live 24/7 emergency dispatch, target response under 60 minutes for life-safety</td>
-                </tr>
-                <tr>
-                  <td class="dim">Documentation</td>
-                  <td class="bad">Varies by vendor</td>
-                  <td class="good">Photo closeout on every work order</td>
-                </tr>
-                <tr>
-                  <td class="dim">Billing</td>
-                  <td class="bad">Many formats, hard to audit</td>
-                  <td class="good">One clean invoice tied to each work order</td>
-                </tr>
-                <tr>
-                  <td class="dim">Unit turns</td>
-                  <td class="bad">You sequence the trades yourself</td>
-                  <td class="good">One crew, one checklist, QC walk at the end</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-pane">
-          <div class="inner">
-            <h2>Doing R&amp;M yourself puts you on call</h2>
-            <p class="section-intro">
-              If you self-manage your buildings, or your property manager handles management while
-              R&amp;M stays with you, the maintenance burden lands on your desk. A handyman for the
-              small stuff, a list of licensed trades for the rest, and after-hours emergencies that
-              ring your cell. There is no documentation trail when insurance or a dispute needs one,
-              no volume pricing, and every unit turn means sequencing the trades yourself.
-            </p>
-            <div class="compare-wrap">
-              <table class="compare">
-                <tr>
-                  <th class="dim"></th>
-                  <th class="bad">Doing it yourself</th>
-                  <th class="good">With Back9</th>
-                </tr>
-                <tr>
-                  <td class="dim">After hours</td>
-                  <td class="bad">Emergency calls ring your cell at 2am</td>
-                  <td class="good">Live 24/7 dispatch, target response under 60 minutes for life-safety</td>
-                </tr>
-                <tr>
-                  <td class="dim">Trade coverage</td>
-                  <td class="bad">A handyman plus a list of licensed trades to call</td>
-                  <td class="good">14 trades in-house, licensed CA contractors for permitted scopes</td>
-                </tr>
-                <tr>
-                  <td class="dim">Documentation</td>
-                  <td class="bad">Little or no photo record for insurance or disputes</td>
-                  <td class="good">Before-and-after photos and closeout records on every job</td>
-                </tr>
-                <tr>
-                  <td class="dim">Pricing</td>
-                  <td class="bad">Retail rates on every one-off call</td>
-                  <td class="good">Tiered volume pricing, typical savings of 5 to 15% off published rates</td>
-                </tr>
-                <tr>
-                  <td class="dim">Residents</td>
-                  <td class="bad">You coordinate access and scheduling</td>
-                  <td class="good">Resident scheduling and access handled by us</td>
-                </tr>
-                <tr>
-                  <td class="dim">Unit turns</td>
-                  <td class="bad">You sequence the trades yourself</td>
-                  <td class="good">One crew, one checklist, QC walk at the end</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
+    <div class="kicker">Our Name</div>
+    <h2>Making the turn</h2>
+    <div class="media-split">
+      <p class="section-intro">
+        In golf, the back nine is where you make the turn for home. That's the work we do. Back9
+        Trades was founded by San Francisco multifamily veterans with decades in this business, and
+        we've learned that a building is never just a building. It's someone's home. When a repair is
+        weighing on yours, we handle it the right way, so home feels like home again.
+      </p>
+      <div class="media-frame">
+        <img src="images/golf-green-ggb.jpg" alt="A golf green with a red flag overlooking the Golden Gate Bridge" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="audiences">
-  <div class="wrap">
-    <div class="kicker">Who We Serve</div>
-    <h2>Built for the people who run buildings</h2>
-    <div class="seg-grid" style="margin-top:28px;">
-      <div class="seg-card">
-        <h3>For Property <span>Managers</span></h3>
-        <p>For management companies without an in-house maintenance team. Route work orders to us the same way you do today; our intake works with Yardi, AppFolio, and Buildium workflows.</p>
-        <ul>
-          <li>Scheduled window confirmed on every ticket</li>
-          <li>Resident scheduling and access handled by us</li>
-          <li>Photo record delivered at closeout</li>
-          <li>One dispatch line for all fourteen trades</li>
-        </ul>
-        <a class="btn" href="#portal" onclick="showTab('proposal')">Request a Proposal</a>
-      </div>
-      <div class="seg-card light">
-        <h3>For Property <span>Owners</span></h3>
-        <p>For owners who self-manage or keep R&amp;M separate from their property manager. Portfolio programs with tiered volume pricing and a single vendor file across every building you own.</p>
-        <ul>
-          <li>Typical savings of 5 to 15% off published rates</li>
-          <li>Flat-rate unit turn pricing for steady turn flow</li>
-          <li>Recurring services on predictable monthly billing</li>
-          <li>Send a sample month of work orders, we quote it in 5 business days</li>
-        </ul>
-        <a class="btn" href="#portal" onclick="showTab('proposal')">Request a Proposal</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt" id="services">
+<section class="section" id="services">
   <div class="wrap">
     <div class="kicker">Services</div>
     <h2>Full-service R&amp;M, all under one roof</h2>
@@ -676,7 +479,14 @@
         </ul>
       </div>
     </div>
-    <p class="section-intro" style="margin:36px 0 0;">
+  </div>
+</section>
+
+<section class="section alt" id="team">
+  <div class="wrap">
+    <div class="kicker">The Team</div>
+    <h2>Experienced crews, fourteen trades, in-house</h2>
+    <p class="section-intro">
       Our field team is built from technicians and supervisors with years of multifamily
       experience across San Francisco buildings. Crews are uniformed, badged, background-screened,
       and OSHA-trained. Dispatch and field staff operate in English and Spanish.
@@ -697,32 +507,24 @@
       <span class="chip">Common-Area Repairs</span>
       <span class="chip">Unit Turn / Make-Ready</span>
     </div>
-  </div>
-</section>
-
-<section class="section" id="compliance">
-  <div class="wrap">
-    <div class="kicker">Coverage &amp; Compliance</div>
-    <h2>Ready for your vendor file</h2>
-    <p class="section-intro">
-      Based in San Francisco and serving multifamily portfolios throughout the Bay Area.
-      Risk and compliance documentation is ready before your first work order.
-    </p>
-    <div class="media-frame" style="aspect-ratio: 3 / 1; margin-bottom: 36px;">
-      <img src="images/painted-ladies-flag.jpg" alt="Painted Lady Victorians with the San Francisco skyline behind them" loading="lazy">
-    </div>
-    <div class="badges">
-      <div class="badge"><strong>Licensed CA Contractor</strong>Licensed contractors handle all permitted scopes.</div>
-      <div class="badge"><strong>Insured</strong>Workers compensation and general liability on file. COI issued to your entity on request.</div>
-      <div class="badge"><strong>Screened &amp; Trained Crews</strong>OSHA-trained, background-screened, uniformed, and badged technicians.</div>
-      <div class="badge"><strong>Photo-Documented Work</strong>Before-and-after photos and closeout records on every work order.</div>
-      <div class="badge"><strong>PM Software Friendly</strong>Intake compatible with Yardi, AppFolio, and Buildium workflows.</div>
-      <div class="badge"><strong>Volume Pricing</strong>Tiered portfolio pricing with typical savings of 5 to 15% off published rates, plus bundling discounts on packaged services.</div>
+    <div class="grid-3" style="margin-top:36px;">
+      <div class="card">
+        <h3>Owner-operator DNA</h3>
+        <p>Founded by SF multifamily veterans. We treat every work order the way we treat our own buildings.</p>
+      </div>
+      <div class="card">
+        <h3>Independent and conflict-free</h3>
+        <p>No institutional ownership ties. Your properties get the same priority as ours.</p>
+      </div>
+      <div class="card">
+        <h3>Built for occupied buildings</h3>
+        <p>Resident scheduling, access coordination, and clean job sites come standard. Your tenants hear from us professionally and on time.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section alt" id="process">
+<section class="section" id="process">
   <div class="wrap">
     <div class="kicker">How We Work</div>
     <h2>From intake to closeout</h2>
@@ -754,82 +556,44 @@
   </div>
 </section>
 
-<section class="section" id="about">
+<section class="section alt" id="compliance">
   <div class="wrap">
-    <div class="kicker">Our Name</div>
-    <h2>Making the turn</h2>
-    <div class="media-split">
-      <p class="section-intro">
-        In golf, the back nine is where you make the turn for home. That's the work we do. Back9
-        Trades was founded by San Francisco multifamily veterans with decades in this business, and
-        we've learned that a building is never just a building. It's someone's home. When a repair is
-        weighing on yours, we handle it the right way, so home feels like home again.
-      </p>
-      <div class="media-frame">
-        <img src="images/golf-green-ggb.jpg" alt="A golf green with a red flag overlooking the Golden Gate Bridge" loading="lazy">
-      </div>
+    <div class="kicker">Coverage &amp; Compliance</div>
+    <h2>Serving the San Francisco Bay Area</h2>
+    <p class="section-intro">
+      Based in San Francisco and serving multifamily portfolios throughout the Bay Area.
+      Risk and compliance documentation is ready for your vendor file.
+    </p>
+    <div class="media-frame" style="aspect-ratio: 3 / 1; margin-bottom: 36px;">
+      <img src="images/painted-ladies-flag.jpg" alt="Painted Lady Victorians with the San Francisco skyline behind them" loading="lazy">
     </div>
-    <div class="grid-3" style="margin-top:36px;">
-      <div class="card">
-        <h3>Owner-operator DNA</h3>
-        <p>Founded by SF multifamily veterans. We treat every work order the way we treat our own buildings.</p>
-      </div>
-      <div class="card">
-        <h3>Independent and conflict-free</h3>
-        <p>No institutional ownership ties. Your properties get the same priority as ours.</p>
-      </div>
-      <div class="card">
-        <h3>Built for occupied buildings</h3>
-        <p>Resident scheduling, access coordination, and clean job sites come standard. Your tenants hear from us professionally and on time.</p>
-      </div>
+    <div class="badges">
+      <div class="badge"><strong>Licensed CA Contractor</strong>Licensed contractors handle all permitted scopes.</div>
+      <div class="badge"><strong>Insured</strong>Workers compensation and general liability on file. COI issued to your entity on request.</div>
+      <div class="badge"><strong>Screened &amp; Trained Crews</strong>OSHA-trained, background-screened, uniformed, and badged technicians.</div>
+      <div class="badge"><strong>Photo-Documented Work</strong>Before-and-after photos and closeout records on every work order.</div>
+      <div class="badge"><strong>PM Software Friendly</strong>Intake compatible with Yardi, AppFolio, and Buildium workflows.</div>
+      <div class="badge"><strong>Volume Pricing</strong>Tiered portfolio pricing with typical savings of 5 to 15% off published rates, plus bundling discounts on packaged services.</div>
     </div>
   </div>
 </section>
 
 <section class="section portal" id="portal">
   <div class="wrap">
-    <div class="kicker">Get Started</div>
-    <h2>Request a proposal or submit a work order</h2>
+    <div class="kicker">Client Portal</div>
+    <h2>Submit a work order or request a proposal</h2>
     <p class="section-intro">
-      Prospective clients can request a proposal or a bid on a defined scope. Existing clients
-      can submit work orders here. Submissions route directly to our dispatch and estimating inbox.
+      Existing clients can submit work orders here. Prospective clients can request a proposal
+      or a bid on a defined scope. Submissions route directly to our dispatch and estimating inbox.
     </p>
     <div class="portal-grid">
       <div class="portal-card">
         <div class="tabs">
-          <button class="tab active" id="tab-proposal" onclick="showTab('proposal')" type="button">Request a Proposal / Bid</button>
-          <button class="tab" id="tab-workorder" onclick="showTab('workorder')" type="button">Submit a Work Order</button>
+          <button class="tab active" id="tab-workorder" onclick="showTab('workorder')" type="button">Submit a Work Order</button>
+          <button class="tab" id="tab-proposal" onclick="showTab('proposal')" type="button">Request a Proposal / Bid</button>
         </div>
 
-        <form id="form-proposal" onsubmit="return sendForm(event, 'proposal')">
-          <div class="form-grid">
-            <div><label for="pr-name">Your name</label><input id="pr-name" required></div>
-            <div><label for="pr-company">Company / portfolio</label><input id="pr-company"></div>
-            <div><label for="pr-email">Email</label><input id="pr-email" type="email" required></div>
-            <div><label for="pr-phone">Phone</label><input id="pr-phone" type="tel"></div>
-            <div>
-              <label for="pr-type">What do you need?</label>
-              <select id="pr-type">
-                <option>Portfolio R&amp;M proposal</option>
-                <option>Bid on a defined scope</option>
-                <option>Unit turn program pricing</option>
-                <option>Recurring services (janitorial, pest, landscaping)</option>
-                <option>Emergency / after-hours retainer</option>
-              </select>
-            </div>
-            <div><label for="pr-units">Units / properties (approx.)</label><input id="pr-units"></div>
-            <div class="full"><label for="pr-desc">Tell us about the portfolio or scope</label><textarea id="pr-desc" required placeholder="Locations, building types, current vendor setup, and timing."></textarea></div>
-            <div class="hp" aria-hidden="true"><label for="pr-website">Leave this blank</label><input id="pr-website" tabindex="-1" autocomplete="off"></div>
-            <div class="full"><button class="btn" id="pr-submit" type="submit">Request Proposal</button></div>
-            <div class="full"><div id="pr-status" class="form-status" role="status" aria-live="polite"></div></div>
-          </div>
-          <div class="form-note">
-            Send us a sample month of work orders and we will come back with a custom quote
-            sheet within 5 business days.
-          </div>
-        </form>
-
-        <form id="form-workorder" style="display:none;" onsubmit="return sendForm(event, 'workorder')">
+        <form id="form-workorder" onsubmit="return sendForm(event, 'workorder')">
           <div class="form-grid">
             <div><label for="wo-name">Your name</label><input id="wo-name" required></div>
             <div><label for="wo-company">Company / portfolio</label><input id="wo-company"></div>
@@ -871,6 +635,34 @@
           <div class="form-note">
             For active emergencies, call our dispatch line. Submissions go straight to our
             dispatch and estimating inbox.
+          </div>
+        </form>
+
+        <form id="form-proposal" style="display:none;" onsubmit="return sendForm(event, 'proposal')">
+          <div class="form-grid">
+            <div><label for="pr-name">Your name</label><input id="pr-name" required></div>
+            <div><label for="pr-company">Company / portfolio</label><input id="pr-company"></div>
+            <div><label for="pr-email">Email</label><input id="pr-email" type="email" required></div>
+            <div><label for="pr-phone">Phone</label><input id="pr-phone" type="tel"></div>
+            <div>
+              <label for="pr-type">What do you need?</label>
+              <select id="pr-type">
+                <option>Portfolio R&amp;M proposal</option>
+                <option>Bid on a defined scope</option>
+                <option>Unit turn program pricing</option>
+                <option>Recurring services (janitorial, pest, landscaping)</option>
+                <option>Emergency / after-hours retainer</option>
+              </select>
+            </div>
+            <div><label for="pr-units">Units / properties (approx.)</label><input id="pr-units"></div>
+            <div class="full"><label for="pr-desc">Tell us about the portfolio or scope</label><textarea id="pr-desc" required placeholder="Locations, building types, current vendor setup, and timing."></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="pr-website">Leave this blank</label><input id="pr-website" tabindex="-1" autocomplete="off"></div>
+            <div class="full"><button class="btn" id="pr-submit" type="submit">Request Proposal</button></div>
+            <div class="full"><div id="pr-status" class="form-status" role="status" aria-live="polite"></div></div>
+          </div>
+          <div class="form-note">
+            Send us a sample month of work orders and we will come back with a custom quote
+            sheet within 5 business days.
           </div>
         </form>
       </div>
@@ -961,31 +753,18 @@
 </footer>
 
 <script>
-function showAud(which) {
-  var track = document.getElementById('aud-track');
-  var pm = document.getElementById('aud-pm');
-  var ow = document.getElementById('aud-owner');
-  if (!track) return;
-  if (which === 'owner') {
-    track.classList.add('show-owner');
-    ow.classList.add('active'); pm.classList.remove('active');
-  } else {
-    track.classList.remove('show-owner');
-    pm.classList.add('active'); ow.classList.remove('active');
-  }
-}
 function showTab(which) {
   var wo = document.getElementById('form-workorder');
   var pr = document.getElementById('form-proposal');
   var tw = document.getElementById('tab-workorder');
   var tp = document.getElementById('tab-proposal');
   if (!wo) return true;
-  if (which === 'workorder') {
-    pr.style.display = 'none'; wo.style.display = 'block';
-    tw.classList.add('active'); tp.classList.remove('active');
-  } else {
+  if (which === 'proposal') {
     wo.style.display = 'none'; pr.style.display = 'block';
     tp.classList.add('active'); tw.classList.remove('active');
+  } else {
+    pr.style.display = 'none'; wo.style.display = 'block';
+    tw.classList.add('active'); tp.classList.remove('active');
   }
   return true;
 }
